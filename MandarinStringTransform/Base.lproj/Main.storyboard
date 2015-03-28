@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MandarinStringTransform" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +17,36 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opQ-OR-6bb">
+                                <rect key="frame" x="146" y="60" width="309" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-W7-AkN">
+                                <rect key="frame" x="146" y="147" width="309" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TGT-W7-AkN" secondAttribute="height" multiplier="309:128" id="XIj-be-fST"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="opQ-OR-6bb" firstAttribute="leading" secondItem="TGT-W7-AkN" secondAttribute="trailing" constant="-309" id="GGD-DH-VEv"/>
+                            <constraint firstItem="TGT-W7-AkN" firstAttribute="top" secondItem="opQ-OR-6bb" secondAttribute="bottom" constant="57" id="SSx-rl-t68"/>
+                            <constraint firstItem="opQ-OR-6bb" firstAttribute="width" secondItem="TGT-W7-AkN" secondAttribute="width" id="W1g-Cc-A3S"/>
+                            <constraint firstAttribute="centerX" secondItem="opQ-OR-6bb" secondAttribute="centerX" constant="-0.5" id="eKo-iZ-g8C"/>
+                            <constraint firstItem="opQ-OR-6bb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="sIf-CI-G4e"/>
+                            <constraint firstItem="opQ-OR-6bb" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="130" id="tYT-1U-m9a"/>
+                            <constraint firstItem="opQ-OR-6bb" firstAttribute="centerX" secondItem="TGT-W7-AkN" secondAttribute="centerX" id="vn2-yt-iiu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="field" destination="opQ-OR-6bb" id="zyF-hV-UyE"/>
+                        <outlet property="result" destination="TGT-W7-AkN" id="3nD-Pe-6wg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
